@@ -46,7 +46,6 @@
     - 500: 서버 문제
     - 502: 게이트웨이 오류
 
-# REST API
 ## REST(Representational State Transfer)    
     -웹의 장점을 최대한 활용할 수 있는 네트워크 기반 아키텍처
     -자원을 이름으로 구분하여 그 상태를 주고받는 모든 것
@@ -69,7 +68,7 @@
     3. -은 가독성, _이용X
     4. /는 계층 관계, 마지막으로 사용X
     5. 확장자는 URI에 미포함
-# 웹 어플리케이션
+
 ## Web Server
     -하드웨어: WEB 서버 설치된 컴퓨터
     -소프트웨어: HTTP요청을 받고 컨텐츠를 제공하는 프로그램
@@ -95,3 +94,29 @@
         3. 여러 대의 WAS 연결
         4. 여러 웹 어플 서비스 가능
         5. 웹에서 처리할 때 효율적인게 있음
+
+# HTTPS
+## HTTPS란?
+    -HyperText Transfer Protocol over *Secure* Socket Layer
+    -즉, S는 보안의 약자
+## HTTPS VS HTTP
+    -HTTP 장점: 접속 도중 끓기더라도 이어할 수 있어 시간을 낭비하지 않음.
+    -HTTP 단점: 암호화되지 않은 상태로 클라이언트와 정보를 주고받을 수 있어서 정보를 가로챌 수 있는 위험 존재
+    -HTTPS 장점: 보안성이 매우 강함. 은행, 쇼핑몰, 정부 사이트 등에서 주로 이용.
+    -HTTPS 단점: 암호화된 정보를 교환하기 때문에 서버에 과부하가 걸리는 경우 발생, 접속이 끊기면 처음부터 시작해야 함.
+
+    -HTTP에서 보안성을 강화한 상위버전이 HTTPS이며, 둘의 속도차이는 사용자로서 체감하기 힘듬. 따라서 HTTPS의 사용이 권장됨.
+
+# API에 대한 RESTful한 URI 설계
+    -이벤트 목록조회: GET /events/list
+    -이벤트 조회: GET /events/{event-name}
+    -이벤트 등록: POST /events/{event-name}
+    -이벤트 수정: POST /events/{event-name}
+    -이벤트 삭제: DELETE /events/{event-name}
+    -이벤트 상태 변경: PATCH /events/{event-name}/status
+    -특정 이벤트의 주문 목록 조회: GET /events/{event-name}/list
+    -멤버 목록 조회: GET /members/list
+    -특정 멤버 권한 변경: PATCH /members/{memberId}/authority
+    -특정 멤버 정보 조회: GET /members/{memberId}/status
+    -특정 멤버 정보 변경: PATCH /members/{memberId}/status
+    -멤버 등록: POST /members/{memberId}
