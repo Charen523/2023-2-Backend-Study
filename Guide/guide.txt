@@ -1,0 +1,4 @@
+git init
+git add .
+git commit -m "Weekn 과제 제출"
+git push origin main
